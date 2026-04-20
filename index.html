@@ -51,12 +51,34 @@ section { padding: 60px 20px; }
 
 <main>
 
-<section id="home">
+<section id="home" style="background: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200') center/cover; color: white; text-align:center; padding:100px 20px;">
+  <h1>Encontre seu veículo dos sonhos</h1>
+  <p>Participe dos melhores leilões</p>
+  <button onclick="showAuctions()">Ver Leilões</button>
+</section>
 <h1>Encontre seu veículo</h1>
 <button onclick="showAuctions()">Ver Leilões</button>
 </section>
 
-<section id="auctions">
+<h2>Leilões</h2>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+
+  <div style="border:1px solid #ccc; padding:10px; width:250px;">
+    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400" width="100%">
+    <h3>Honda Civic 2020</h3>
+    <p>R$ 45.000</p>
+    <button onclick="darLance()">Dar lance</button>
+  </div>
+
+  <div style="border:1px solid #ccc; padding:10px; width:250px;">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400" width="100%">
+    <h3>BMW 320i</h3>
+    <p>R$ 80.000</p>
+    <button onclick="darLance()">Dar lance</button>
+  </div>
+
+</div>
 <h2>Leilões</h2>
 </section>
 
