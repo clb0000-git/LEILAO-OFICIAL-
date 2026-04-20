@@ -21,3 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+const submitLogin = document.getElementById("submitLogin");
+
+if (submitLogin) {
+  submitLogin.addEventListener("click", () => {
+    alert("Login funcionando!");
+  });
+}
