@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LVS - Leilão Veículos Silva | Carros e Motos com os Melhores Preços</title>
-    <meta name="description" content="LVS Leilão Veículos Silva - Carros e motos com descontos de até 60%! Fale agora pelo WhatsApp e garanta sua oferta!">
+    <title>LVS - Leilão Veículos Silva | Carros e Motos até 60% OFF</title>
+    <meta name="description" content="LVS Leilão Veículos Silva - Carros, motos e caminhonetes com descontos de até 60%! Leilões semanais. Fale agora pelo WhatsApp!">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -97,6 +97,21 @@
             width: 100%;
         }
 
+        .header-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -114,7 +129,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a2e" width="1200" height="800"/><circle fill="%23ff6b35" opacity="0.1" cx="200" cy="200" r="150"/><circle fill="%23f7931e" opacity="0.1" cx="1000" cy="300" r="200"/><circle fill="%2325D366" opacity="0.1" cx="600" cy="600" r="180"/></svg>');
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,27 +140,8 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120,219,255,0.3) 0%, transparent 50%);
-            animation: floatBg 20s ease-in-out infinite;
-        }
-
-        @keyframes floatBg {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
-        }
-
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 0 2rem;
             position: relative;
             z-index: 2;
@@ -152,28 +149,22 @@
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-size: clamp(3rem, 7vw, 5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
         }
 
         .hero .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
             font-weight: 300;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
         }
 
@@ -181,12 +172,12 @@
             display: inline-block;
             background: linear-gradient(135deg, #ff6b35, #f7931e);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
             animation: bounce 2s infinite;
         }
 
@@ -196,61 +187,89 @@
             gap: 15px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
-            padding: 1.3rem 3.5rem;
+            padding: 1.5rem 4rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.2rem;
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            font-size: 1.3rem;
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             animation: pulseGreen 2s infinite;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 30px 60px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes pulseGreen {
-            0% { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6); }
-            100% { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
+            0% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4); }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 120px 5%;
+        /* Container */
+        .container {
             max-width: 1400px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0 5%;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            padding: 5rem 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item h3 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Featured Vehicles */
+        .featured {
+            padding: 120px 0;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -260,24 +279,116 @@
         }
 
         .section-subtitle {
-            text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #666;
-            max-width: 600px;
-            margin: 0 auto 4rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .vehicles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .vehicle-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+        }
+
+        .vehicle-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .vehicle-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .vehicle-info {
+            padding: 2rem;
+        }
+
+        .vehicle-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .vehicle-specs {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .vehicle-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+
+        .vehicle-cta {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .vehicle-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: white;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         .service-card {
             background: white;
             padding: 3rem 2.5rem;
             border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
             text-align: center;
             transition: all 0.4s ease;
             border: 2px solid transparent;
@@ -291,7 +402,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
             transform: scaleX(0);
             transition: transform 0.4s ease;
@@ -308,30 +419,23 @@
         }
 
         .service-icon {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
         }
 
         .service-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1.2rem;
             color: #333;
-        }
-
-        .price-highlight {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ff6b35;
-            margin: 1rem 0;
         }
 
         /* WhatsApp Widget */
@@ -345,206 +449,97 @@
 
         @keyframes bounceWidget {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
 
         .whatsapp-btn {
-            width: 75px;
-            height: 75px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.5);
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 4px solid rgba(255,255,255,0.2);
+            border: 5px solid rgba(255,255,255,0.2);
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 25px 60px rgba(37, 211, 102, 0.7);
-        }
-
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            padding: 4rem 5%;
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transform: scale(1.2) rotate(15deg);
+            box-shadow: 0 30px 70px rgba(37, 211, 102, 0.7);
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
             color: white;
-            text-align: center;
-            padding: 4rem 5% 2rem;
+            padding: 5rem 0 2rem;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h3 {
             margin-bottom: 1.5rem;
             color: #ff6b35;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            font-size: 1.1rem;
+            gap: 1.2rem;
+            margin-top: 1rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: #ccc;
             transition: color 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .contact-item:hover {
             color: #ff6b35;
         }
 
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff6b35;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 100%;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(0,0,0,0.98);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
-                transition: 0.3s;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .services {
-                padding: 80px 5%;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .counter {
-            font-size: 3rem !important;
-            font-weight: 700 !important;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <i class="fas fa-gavel"></i>
-                LVS Leilão Veículos Silva
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Leilões</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="discount-badge">
-                💰 ATÉ 60% OFF EM CARROS E MOTOS!
-            </div>
-            <h1>LVS Leilão Veículos Silva</h1>
-            <p class="subtitle">Os melhores carros e motos do mercado com preços imbatíveis. Fale agora e garanta sua oferta!</p>
-            <a href="https://wa.me/5513997512797?text=Olá!%20Vi%20o%20site%20da%20LVS%20e%20quero%20saber%20dos%20leilões%20de%20carros%20e%20motos!" class="cta-button" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                Falar com Leiloeiro Agora
-            </a>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats fade-in">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3 data-target="5000">0</h3>
-                <p>Veículos Leiloados</p>
-            </div>
-            <div class="stat-item">
-                <h3 data-target="98">0</h3>
-                <p>% Satisfação</p>
-            </div>
-            <div class="stat-item">
-                <h3 data-target="1500">0</h3>
-                <p>Clientes Atendidos</p>
-            </div>
-            <div class="stat-item">
-                <h3 data-target="24">0</h3>
-                <p>h Suporte</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2
+        @media (max-width: 768px
