@@ -4,21 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LVS - Leilão Veículos Silva | Carros e Motos até 60% OFF</title>
-    <meta name="description" content="LVS Leilão Veículos Silva - Carros, motos e caminhonetes com descontos de até 60%! Leilões semanais. Fale agora pelo WhatsApp!">
+    <meta name="description" content="LVS Leilão Veículos Silva - Carros, motos e caminhonetes com descontos de até 60%! Leilões semanais com os melhores preços. WhatsApp: (13) 99751-2797">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Header */
@@ -26,37 +22,33 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
 
         nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1.8rem;
             font-weight: 700;
             color: #ff6b35;
-            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+            text-decoration: none;
         }
 
-        .logo i {
-            font-size: 2.2rem;
-            color: #ff6b35;
-            animation: pulseCar 2s infinite;
-        }
+        .logo i { font-size: 2.3rem; animation: pulseCar 2s infinite; }
 
         @keyframes pulseCar {
             0%, 100% { transform: scale(1); }
@@ -66,201 +58,132 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
-            text-decoration: none;
             color: white;
+            text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
         }
 
-        .nav-links a:hover {
-            color: #ff6b35;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, #ff6b35, #f7931e);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: #ff6b35; }
 
         .header-cta {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .header-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
+            gap: 5px;
         }
 
         .hamburger span {
-            width: 25px;
+            width: 28px;
             height: 3px;
             background: white;
             transition: 0.3s;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a2e" width="1200" height="800"/><circle fill="%23ff6b35" opacity="0.1" cx="200" cy="200" r="150"/><circle fill="%23f7931e" opacity="0.1" cx="1000" cy="300" r="200"/><circle fill="%2325D366" opacity="0.1" cx="600" cy="600" r="180"/></svg>');
+            background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(16,52,96,0.95) 100%), 
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%231a1a2e' width='1200' height='800'/%3E%3Ccircle fill='%23ff6b35' opacity='0.15' cx='200' cy='200' r='200'/%3E%3Ccircle fill='%23f7931e' opacity='0.1' cx='1000' cy='300' r='250'/%3E%3C/svg%3E");
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-content {
             max-width: 1000px;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-            animation: slideUp 1s ease-out;
+            animation: slideUp 1.2s ease-out;
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(60px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero h1 {
-            font-size: clamp(3rem, 7vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-        }
-
-        .discount-badge {
-            display: inline-block;
+        .hero-badge {
             background: linear-gradient(135deg, #ff6b35, #f7931e);
             color: white;
-            padding: 1rem 2.5rem;
+            display: inline-block;
+            padding: 1.2rem 3rem;
             border-radius: 50px;
-            font-weight: 700;
             font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 40px rgba(255,107,53,0.4);
             animation: bounce 2s infinite;
         }
 
-        .cta-button {
+        .hero h1 {
+            font-size: clamp(3.2rem, 8vw, 5.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 8px 30px rgba(0,0,0,0.7);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-cta {
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 1.5rem 4rem;
+            padding: 1.6rem 4rem;
             border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
             font-size: 1.3rem;
-            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 20px 50px rgba(37,211,102,0.4);
+            transition: all 0.4s ease;
             animation: pulseGreen 2s infinite;
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px rgba(37, 211, 102, 0.6);
+        .main-cta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 70px rgba(37,211,102,0.6);
         }
 
-        @keyframes pulseGreen {
-            0% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6); }
-            100% { box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4); }
+        /* Sections */
+        .section {
+            padding: 120px 0;
         }
 
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
-        }
-
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            padding: 5rem 0;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-item h3 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.3);
-        }
-
-        .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-
-        /* Featured Vehicles */
-        .featured {
-            padding: 120px 0;
-            background: #f8f9fa;
         }
 
         .section-header {
@@ -269,13 +192,13 @@
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .section-subtitle {
@@ -285,11 +208,37 @@
             margin: 0 auto;
         }
 
+        /* Stats */
+        .stats {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Featured Vehicles */
+        .featured-vehicles {
+            background: #f8f9fa;
+        }
+
         .vehicles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2.5rem;
-            margin-bottom: 4rem;
         }
 
         .vehicle-card {
@@ -298,16 +247,15 @@
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             transition: all 0.4s ease;
-            position: relative;
         }
 
         .vehicle-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-20px);
             box-shadow: 0 40px 100px rgba(0,0,0,0.2);
         }
 
         .vehicle-image {
-            height: 220px;
+            height: 240px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -316,39 +264,46 @@
         .vehicle-badge {
             position: absolute;
             top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            left: 20px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
             font-weight: 700;
             font-size: 0.9rem;
         }
 
-        .vehicle-info {
-            padding: 2rem;
+        .vehicle-content {
+            padding: 2.2rem;
         }
 
         .vehicle-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
             color: #333;
         }
 
         .vehicle-specs {
             display: flex;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             color: #666;
         }
 
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         .vehicle-price {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.3rem;
+            font-weight: 800;
             color: #ff6b35;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .vehicle-cta {
@@ -356,9 +311,10 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
+            padding: 1.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -368,158 +324,128 @@
         }
 
         .vehicle-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(37,211,102,0.4);
         }
 
-        /* Services Section */
-        .services {
-            padding: 120px 0;
-            background: white;
-        }
-
+        /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 3rem;
         }
 
         .service-card {
             background: white;
-            padding: 3rem 2.5rem;
-            border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            padding: 3.5rem 3rem;
+            border-radius: 30px;
             text-align: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            transform: translateY(-20px);
             border-color: #ff6b35;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.15);
         }
 
         .service-icon {
-            width: 110px;
-            height: 110px;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            border-radius: 25px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2.8rem;
+            margin: 0 auto 2.5rem;
+            font-size: 3rem;
             color: white;
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 20px 50px rgba(255,107,53,0.3);
         }
 
         .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
         /* WhatsApp Widget */
         .whatsapp-widget {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 40px;
+            right: 40px;
             z-index: 10000;
             animation: bounceWidget 3s infinite;
         }
 
-        @keyframes bounceWidget {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
         .whatsapp-btn {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.5);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 60px rgba(37,211,102,0.5);
+            transition: all 0.4s ease;
             cursor: pointer;
             border: 5px solid rgba(255,255,255,0.2);
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.2) rotate(15deg);
-            box-shadow: 0 30px 70px rgba(37, 211, 102, 0.7);
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 30px 80px rgba(37,211,102,0.7);
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #0f0f23;
             color: white;
-            padding: 5rem 0 2rem;
+            padding: 6rem 0 2rem;
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            gap: 4rem;
             margin-bottom: 3rem;
         }
 
         .footer-section h3 {
-            margin-bottom: 1.5rem;
             color: #ff6b35;
-            font-size: 1.5rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            margin-top: 1rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.6rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+            margin-bottom: 1.2rem;
             color: #ccc;
             transition: color 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        .contact-item:hover {
-            color: #ff6b35;
-        }
+        .contact-item:hover { color: #ff6b35; }
 
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -527,19 +453,91 @@
             justify-content: center;
             color: white;
             transition: all 0.3s ease;
+            font-size: 1.3rem;
         }
 
         .social-links a:hover {
             background: #ff6b35;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .footer-bottom {
             border-top: 1px solid #333;
-            padding-top: 2rem;
+            padding-top: 2.5rem;
             text-align: center;
             color: #999;
+            font-size: 0.95rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(26,26,46,0.99);
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding: 3rem 0;
+                transition: left 0.4s ease;
+            }
+            .nav-links.active { left: 0; }
+            .section { padding: 80px 0; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes bounceWidget {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <i class="fas fa-gavel"></i>
+                LVS Leilão Veículos Silva
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#veiculos">Leilões</a></li>
+                <li><a href="#servicos">Vantagens</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/5513997512797?text=Olá!%20Quero%20participar%20dos%20leilões%20LVS!" class="header-cta">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                🚗💨 ATÉ 60% OFF EM CARROS E MOTOS!
+            </div>
+            <h1>LVS Leilão Veículos Silva</h1>
+            <p class="hero-subtitle">
+                Leilões semanais com os MELHORES carros, motos e utilitários. 
+                Preços imbatíveis e financiamento facilitado!
+            </p>
+            <a href="https://wa.me/5513997512797?text=Olá!%
