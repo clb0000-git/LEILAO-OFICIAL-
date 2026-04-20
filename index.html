@@ -3,541 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LVS - Leilão Veículos Silva | Carros e Motos até 60% OFF</title>
-    <meta name="description" content="LVS Leilão Veículos Silva - Carros, motos e caminhonetes com descontos de até 60%! Leilões semanais com os melhores preços. WhatsApp: (13) 99751-2797">
+    <title>LVS - Leilão Veículos Silva</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* Header */
-        header {
+        .header {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             position: fixed;
-            top: 0;
             width: 100%;
-            background: rgba(26, 26, 46, 0.98);
-            backdrop-filter: blur(15px);
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ff6b35;
-            text-decoration: none;
-        }
-
-        .logo i { font-size: 2.3rem; animation: pulseCar 2s infinite; }
-
-        @keyframes pulseCar {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover { color: #ff6b35; }
-
-        .header-cta {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .header-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37,211,102,0.4);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: white;
-            transition: 0.3s;
-        }
-
-        /* Hero */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(16,52,96,0.95) 100%), 
-                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%231a1a2e' width='1200' height='800'/%3E%3Ccircle fill='%23ff6b35' opacity='0.15' cx='200' cy='200' r='200'/%3E%3Ccircle fill='%23f7931e' opacity='0.1' cx='1000' cy='300' r='250'/%3E%3C/svg%3E");
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            padding: 0 2rem;
-            animation: slideUp 1.2s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(60px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: white;
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            box-shadow: 0 15px 40px rgba(255,107,53,0.4);
-            animation: bounce 2s infinite;
-        }
-
-        .hero h1 {
-            font-size: clamp(3.2rem, 8vw, 5.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            text-shadow: 0 8px 30px rgba(0,0,0,0.7);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.3rem, 4vw, 1.8rem);
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .main-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 1.6rem 4rem;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 20px 50px rgba(37,211,102,0.4);
-            transition: all 0.4s ease;
-            animation: pulseGreen 2s infinite;
-        }
-
-        .main-cta:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 70px rgba(37,211,102,0.6);
-        }
-
-        /* Sections */
-        .section {
-            padding: 120px 0;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 20px;
         }
 
-        .section-header {
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
             text-align: center;
-            margin-bottom: 5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .section-title {
-            font-size: clamp(2.8rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-subtitle {
-            font-size: 1.4rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Stats */
-        .stats {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        /* Featured Vehicles */
-        .featured-vehicles {
-            background: #f8f9fa;
-        }
-
-        .vehicles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .vehicle-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-
-        .vehicle-card:hover {
-            transform: translateY(-20px);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
-        }
-
-        .vehicle-image {
-            height: 240px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .vehicle-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 0.6rem 1.4rem;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .vehicle-content {
-            padding: 2.2rem;
-        }
-
-        .vehicle-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: #333;
-        }
-
-        .vehicle-specs {
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><circle fill="%23ff6b35" opacity="0.3" cx="200" cy="150" r="80"/><circle fill="%23f7931e" opacity="0.2" cx="1000" cy="400" r="120"/><rect fill="%232a5298" opacity="0.4" x="300" y="300" width="200" height="100" rx="20"/></svg>');
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .vehicle-price {
-            font-size: 2.3rem;
-            font-weight: 800;
-            color: #ff6b35;
-            margin-bottom: 1.8rem;
-        }
-
-        .vehicle-cta {
-            width: 100%;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border: none;
-            padding: 1.2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            gap: 10px;
-        }
-
-        .vehicle-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(37,211,102,0.4);
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 3.5rem 3rem;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-20px);
-            border-color: #ff6b35;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            border-radius: 30px;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 2.5rem;
-            font-size: 3rem;
-            color: white;
-            box-shadow: 0 20px 50px rgba(255,107,53,0.3);
+            text-align: center;
+            margin-top: 80px;
         }
 
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #333;
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
         }
 
-        .service-card p {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        /* WhatsApp Widget */
-        .whatsapp-widget {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            z-index: 10000;
-            animation: bounceWidget 3s infinite;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .whatsapp-btn {
-            width: 85px;
-            height: 85px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 60px rgba(37,211,102,0.5);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border: 5px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.2) rotate(10deg);
-            box-shadow: 0 30px 80px rgba(37,211,102,0.7);
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37,211,102,0.6);
         }
 
-        /* Footer */
-        footer {
-            background: #0f0f23;
+        .whatsapp-btn i {
+            font-size: 2.5em;
             color: white;
-            padding: 6rem 0 2rem;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-            margin-bottom: 3rem;
+        .section {
+            padding: 80px 0;
         }
 
-        .footer-section h3 {
-            color: #ff6b35;
-            margin-bottom: 1.8rem;
-            font-size: 1.6rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.2rem;
-            color: #ccc;
-            transition: color 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .contact-item:hover { color: #ff6b35; }
-
-        .social-links {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-            font-size: 1.3rem;
-        }
-
-        .social-links a:hover {
-            background: #ff6b35;
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 2.5rem;
+        .section-title {
             text-align: center;
-            color: #999;
-            font-size: 0.95rem;
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: #ff6b35;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* Responsive */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(255,107,53,0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ff6b35;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff88;
+            margin: 15px 0;
+        }
+
+        .bid-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .bid-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255,107,53,0.4);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .stats span {
+            color: #00ff88;
+        }
+
+        .cta-section {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-title {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #1e3c72;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(0,255,136,0.4);
+        }
+
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-links {
-                position: fixed;
-                top: 100%;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(26,26,46,0.99);
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                padding: 3rem 0;
-                transition: left 0.4s ease;
+            .hero h1 {
+                font-size: 2.5em;
             }
-            .nav-links.active { left: 0; }
-            .section { padding: 80px 0; }
+            .section-title {
+                font-size: 2em;
+            }
+            .cta-title {
+                font-size: 2.5em;
+            }
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        @keyframes bounceWidget {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-25px); }
+        .particle {
+            position: absolute;
+            background: rgba(255,107,53,0.6);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Partículas flutuantes -->
+    <div class="floating-particles" id="particles"></div>
+
     <!-- Header -->
-    <header>
-        <nav>
-            <a href="#home" class="logo">
-                <i class="fas fa-gavel"></i>
-                LVS Leilão Veículos Silva
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#veiculos">Leilões</a></li>
-                <li><a href="#servicos">Vantagens</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <a href="https://wa.me/5513997512797?text=Olá!%20Quero%20participar%20dos%20leilões%20LVS!" class="header-cta">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                🚗 LVS - Leilão Veículos Silva 🏍️
             </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                🚗💨 ATÉ 60% OFF EM CARROS E MOTOS!
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🚀 LEILÕES IMPERDÍVEIS! 🚀</h1>
+        <p style="font-size: 1.5em; margin-bottom: 30px;">Carros e Motos com Preços Surpreendentes!</p>
+        <a href="#leiloes" class="cta-btn" style="font-size: 1.3em; padding: 15px 40px;">Ver Leilões Agora</a>
+    </section>
+
+    <!-- Leilões Section -->
+    <section class="section" id="leiloes">
+        <div class="container">
+            <h2 class="section-title">🔥 LEILÕES DISPONÍVEIS 🔥</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMW X5">
+                    <div class="card-content">
+                        <h3>BMW X5 2020</h3>
+                        <div class="price">R$ 189.000</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 47 lances</span>
+                            <span><i class="fas fa-clock"></i> 2h 15min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Honda Civic">
+                    <div class="card-content">
+                        <h3>Honda Civic 2022</h3>
+                        <div class="price">R$ 98.500</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 92 lances</span>
+                            <span><i class="fas fa-clock"></i> 45min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1571171638497-2a79ca6b4445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Harley Davidson">
+                    <div class="card-content">
+                        <h3>Harley Davidson Sportster</h3>
+                        <div class="price">R$ 67.900</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 33 lances</span>
+                            <span><i class="fas fa-clock"></i> 1h 30min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1545156521-1e95e332b2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Audi A3">
+                    <div class="card-content">
+                        <h3>Audi A3 2021</h3>
+                        <div class="price">R$ 142.000</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 68 lances</span>
+                            <span><i class="fas fa-clock"></i> 3h 20min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1603796846093-bee3e9ceee47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Yamaha MT-07">
+                    <div class="card-content">
+                        <h3>Yamaha MT-07 2023</h3>
+                        <div class="price">R$ 45.800</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 55 lances</span>
+                            <span><i class="fas fa-clock"></i> 1h 10min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1547803158-9f4d3a9d5b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mercedes C180">
+                    <div class="card-content">
+                        <h3>Mercedes C180 2019</h3>
+                        <div class="price">R$ 135.000</div>
+                        <div class="stats">
+                            <span><i class="fas fa-fire"></i> 41 lances</span>
+                            <span><i class="fas fa-clock"></i> 4h 50min</span>
+                        </div>
+                        <button class="bid-btn">Dar Lance Agora</button>
+                    </div>
+                </div>
             </div>
-            <h1>LVS Leilão Veículos Silva</h1>
-            <p class="hero-subtitle">
-                Leilões semanais com os MELHORES carros, motos e utilitários. 
-                Preços imbatíveis e financiamento facilitado!
-            </p>
-            <a href="https://wa.me/5513997512797?text=Olá!%
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">💰 NÃO PERCA ESSA OPORTUNIDADE! 💰</h2>
+            <p style="font-size: 1.5em; margin-bottom: 30px;">Fale agora com nosso especialista e garanta seu veículo dos sonhos!</p>
+            <a href="https://wa.me/5513997512797?text=Olá!%20Tenho%20interesse%20nos%20leilões%20da%20LVS!" class="cta-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5513997512797?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20leilões%20LVS!" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Animação de partículas flutuantes
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = particle.style.height = (Math.random() * 10 + 5) + 'px';
+            particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('particles').appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 7000);
+        }
+
+        setInterval(createParticle, 300);
+
+        // Smooth scroll para os botões
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efeito nos botões de lance
+        document.querySelectorAll('.bid-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                setTimeout(() => {
+                    this.innerHTML = 'Dar Lance Agora';
+                    alert('Lance enviado com sucesso! Entre em contato pelo WhatsApp para confirmar.');
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
