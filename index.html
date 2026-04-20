@@ -179,15 +179,41 @@ alert("Mensagem enviada!");
 
 <script>
 
+// TESTE
+alert("JS carregado");
+
 document.addEventListener("DOMContentLoaded", () => {
-   // código que já existe
+
+  // BOTÃO ENTRAR
+  const loginBtn = document.getElementById("loginBtn");
+  const registerBtn = document.getElementById("registerBtn");
+  const modal = document.getElementById("authModal");
+
+  if (loginBtn) {
+    loginBtn.onclick = () => modal.style.display = "block";
+  }
+
+  if (registerBtn) {
+    registerBtn.onclick = () => modal.style.display = "block";
+  }
+
+  // FORMULÁRIO CONTATO
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Mensagem enviada!");
+    });
+  }
+
 });
 
+// BOTÃO LANCE
 function darLance() {
   alert("Lance enviado!");
 }
 
 </script>
-
 </body>
 </html>
