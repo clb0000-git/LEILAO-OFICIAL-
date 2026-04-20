@@ -104,116 +104,122 @@ section { padding: 60px 20px; }
 
 </main>
 
-<!-- MODAL -->
-<div id="authModal" class="modal">
-<div class="modal-content">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leilão de Veículos</title>
 
-<span class="close">X</span>
-
-<div id="loginForm">
-<h2>Entrar</h2>
-<input type="email" placeholder="Email"><br><br>
-<input type="password" placeholder="Senha"><br><br>
-<button>Entrar</button>
-<p><a href="#" id="showRegister">Cadastrar</a></p>
-</div>
-
-<div id="registerForm" style="display:none;">
-<h2>Cadastrar</h2>
-<input type="text" placeholder="Nome"><br><br>
-<input type="email" placeholder="Email"><br><br>
-<input type="password" placeholder="Senha"><br><br>
-<button>Cadastrar</button>
-<p><a href="#" id="showLogin">Entrar</a></p>
-</div>
-
-</div>
-</div>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-
-const registerBtn = document.getElementById("registerBtn");
-
-const modal = document.getElementById("authModal");
-const loginForm = document.getElementById("loginForm");
-const registerForm = document.getElementById("registerForm");
-
-document.querySelector(".close").onclick = () => modal.style.display = "none";
-
-loginBtn.onclick = () => {
-modal.style.display = "block";
-loginForm.style.display = "block";
-registerForm.style.display = "none";
-};
-
-registerBtn.onclick = () => {
-modal.style.display = "block";
-loginForm.style.display = "none";
-registerForm.style.display = "block";
-};
-
-document.getElementById("showRegister").onclick = (e) => {
-e.preventDefault();
-loginForm.style.display = "none";
-registerForm.style.display = "block";
-};
-
-document.getElementById("showLogin").onclick = (e) => {
-e.preventDefault();
-loginForm.style.display = "block";
-registerForm.style.display = "none";
-};
-
-window.showAuctions = () => {
-document.getElementById("auctions").scrollIntoView({ behavior: "smooth" });
-};
-
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-e.preventDefault();
-alert("Mensagem enviada!");
-});
-
-});
-
-<script>
-
-// TESTE
-alert("JS carregado");
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  // BOTÃO ENTRAR
-  const loginBtn = document.getElementById("loginBtn");
-  const registerBtn = document.getElementById("registerBtn");
-  const modal = document.getElementById("authModal");
-
-  if (loginBtn) {
-    loginBtn.onclick = () => modal.style.display = "block";
-  }
-
-  if (registerBtn) {
-    registerBtn.onclick = () => modal.style.display = "block";
-  }
-
-  // FORMULÁRIO CONTATO
-  const form = document.getElementById("contactForm");
-
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Mensagem enviada!");
-    });
-  }
-
-});
-
-// BOTÃO LANCE
-function darLance() {
-  alert("Lance enviado!");
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
 }
 
-</script>
+header {
+  background: #111;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200') center/cover;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.btn {
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-body {
+  padding: 10px;
+  text-align: center;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Leilão de Veículos</h2>
+</header>
+
+<section class="hero">
+<h1>Compre seu carro com até 70% de desconto</h1>
+<p>Leilões confiáveis e veículos revisados</p>
+
+<a class="btn" href="https://wa.me/SEUNUMERO" target="_blank">
+Falar no WhatsApp
+</a>
+</section>
+
+<section class="cars">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400">
+<div class="card-body">
+<h3>Honda Civic 2020</h3>
+<p>A partir de R$ 45.000</p>
+<a class="btn" href="https://wa.me/SEUNUMERO" target="_blank">Tenho interesse</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400">
+<div class="card-body">
+<h3>BMW 320i</h3>
+<p>A partir de R$ 80.000</p>
+<a class="btn" href="https://wa.me/SEUNUMERO" target="_blank">Tenho interesse</a>
+</div>
+</div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/5513997512797" target="_blank">
+💬
+</a>
+
 </body>
 </html>
