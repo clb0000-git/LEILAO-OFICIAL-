@@ -1,19 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>LSV Leilão Silva Veículos - Oportunidades Imperdíveis!</title>
-<style>
-  /* Estilos originais sem alterações */
-  /* ... (mesmo CSS do exemplo anterior) ... */
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LSV Leilão Silva Veículos - Oportunidades Imperdíveis!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #121217;
+      color: #eee;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #ff6700;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffa241;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    header {
+      background-color: #000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #ff6700;
+    }
+    header img {
+      height: 90px;
+    }
+    nav {
+      display: flex;
+      gap: 30px;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    nav a {
+      color: #eee;
+    }
+    nav a:hover {
+      color: #ff6700;
+      border-bottom: 2px solid #ff6700;
+      padding-bottom: 3px;
+    }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .social-links a {
+      background-color: #3b5998;
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9em;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .whatsapp-placeholder {
+      background-color: #555;
+      padding: 10px 18px;
+      border-radius: 6px;
+      opacity: 0.5;
+      font-weight: 600;
+      font-size: 0.9em;
+      cursor: not-allowed;
+      white-space: nowrap;
+    }
+    .hero {
+      background-color: #1c1c23;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 3px solid #ff6700;
+    }
+    .hero img {
+      max-width: 220px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #ff6700;
+      text-shadow: 0 0 10px #ff6700;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.3em;
+      color: #ccc;
+    }
+    .hero p strong {
+      color: #ff6700;
+    }
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    #motos h2 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      color: #ff6700;
+      text-align: center;
+      text-shadow: 0 0 8px #ff6700;
+    }
+    .motos-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 30px;
+    }
+    .moto-card {
+      background: #18181f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgb(255 103 0 / 0.45);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      cursor: default;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .moto-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgb(255 103 0 / 0.85);
+    }
+    .moto-placeholder {
+      height: 180px;
+      width: 100%;
+      border: 3px dashed #ff6700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ff6700;
+      font-weight: 700;
+      font-size: 1.2em;
+      font-style: italic;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      padding: 0 15px;
+      user-select: none;
+    }
+    .moto-content {
+      color: #ddd;
+      line-height: 1.4;
+    }
+    .moto-title {
+      font-size: 1.5em;
+      margin-bottom: 12px;
+      color: #ff6700;
+      font-weight: 700;
+      text-shadow: 0 0 4px #ff6700;
+    }
+    .moto-info {
+      font-size: 1em;
+      margin-bottom: 16px;
+    }
+    .price {
+      font-size: 1.35em;
+      font-weight: 700;
+      color: #ffa241;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 6px #ffa241;
+    }
+    .status {
+      font-weight: 600;
+      color: #ff4500;
+      letter-spacing: 0.8px;
+      font-size: 0.95em;
+    }
+    #sobre {
+      background: #1c1c23;
+      padding: 40px 30px;
+      border-radius: 12px;
+      margin-top: 60px;
+      box-shadow: 0 0 20px rgb(255 103 0 / 0.45);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #eee;
+      font-size: 1.1em;
+    }
+    #sobre h2 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+      color: #ff6700;
+      text-align: center;
+      text-shadow: 0 0 8px #ff6700;
+    }
+    #sobre ul {
+      list-style: none;
+      padding: 0;
+    }
+    #sobre ul li {
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    #sobre ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #ff6700;
+      font-weight: 900;
+      font-size: 1.3em;
+      text-shadow: 0 0 6px #ff6700;
+    }
+    #contato {
+      background: #18181f;
+      max-width: 700px;
+      margin: 60px auto 80px;
+      border-radius: 12px;
+      padding: 35px 40px;
+      box-shadow: 0 0 20px rgb(255 103 0 / 0.55);
+      text-align: center;
+      color: #ddd;
+    }
+    #contato h2 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #ff6700;
+      text-shadow: 0 0 6px #ff6700;
+    }
+    #contato p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    #contato a.facebook-link {
+      background-color: #3b5998;
+      padding: 12px 30px;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      font-size: 1.1em;
+      display: inline-block;
+      box-shadow: 0 0 12px #3b5998;
+      transition: background-color 0.3s ease;
+    }
+    #contato a.facebook-link:hover {
+      background-color: #2d4373;
+      box-shadow: 0 0 20px #2d4373;
+    }
+    #contato .whatsapp-note {
+      margin-top: 30px;
+      color: #aaa;
+      font-style: italic;
+      font-size: 1em;
+      opacity: 0.7;
+    }
+    footer {
+      background-color: #000;
+      color: #666;
+      text-align: center;
+      padding: 18px 15px;
+      font-size: 0.9em;
+      border-top: 3px solid #ff6700;
+      user-select: none;
+    }
+    @media (max-width: 480px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        margin: 8px 12px;
+      }
+      header {
+        justify-content: center;
+        gap: 20px;
+      }
+      .hero h1 {
+        font-size: 2.1em;
+      }
+      .moto-card {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <a href="#inicio" aria-label="Logo LSV Leilão Silva Veículos">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="LSV Leilão Silva Veículos Logo" />
+    <img src="https://i.imgur.com/C84OC2v.png" alt="LSV Leilão Silva Veículos Logo" />
   </a>
   <nav>
     <a href="#inicio">Início</a>
@@ -28,20 +312,21 @@
 </header>
 
 <section class="hero" id="inicio">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="LSV Leilão Silva Veículos Logo" />
+  <img src="https://i.imgur.com/C84OC2v.png" alt="LSV Leilão Silva Veículos Logo" />
   <h1>LSV Leilão Silva Veículos</h1>
   <p><strong>Carros e motos com preços surpreendentes e oportunidades únicas!</strong><br />
   Adquira veículos recuperados de financiamento com total segurança e transparência. O leilão que você esperava para realizar o melhor negócio está aqui!</p>
 </section>
 
 <main>
+
 <section id="motos" aria-label="Lista de motos disponíveis para leilão">
   <h2>Motos com Preços Imperdíveis</h2>
   <div class="motos-list">
 
     <article class="moto-card" tabindex="0" aria-describedby="desc-bros160">
-      <div class="moto-image">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="Ilustração Honda Bros 160 estilizada" />
+      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
+        Visualize as imagens das motos disponíveis no nosso Facebook
       </div>
       <div class="moto-content">
         <h3 class="moto-title">Honda Bros 160</h3>
@@ -60,8 +345,8 @@
     </article>
 
     <article class="moto-card" tabindex="0" aria-describedby="desc-titan160">
-      <div class="moto-image">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="Ilustração Honda Titan 160 estilizada" />
+      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
+        Visualize as imagens das motos disponíveis no nosso Facebook
       </div>
       <div class="moto-content">
         <h3 class="moto-title">Honda Titan 160</h3>
@@ -80,8 +365,8 @@
     </article>
 
     <article class="moto-card" tabindex="0" aria-describedby="desc-r15">
-      <div class="moto-image">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." alt="Ilustração Yamaha R15 estilizada" />
+      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
+        Visualize as imagens das motos disponíveis no nosso Facebook
       </div>
       <div class="moto-content">
         <h3 class="moto-title">Yamaha R15</h3>
@@ -128,4 +413,4 @@
 </footer>
 
 </body>
-  </html>
+      </html>
