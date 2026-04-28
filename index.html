@@ -3,147 +3,322 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LVS Leilão - Veículos Silva</title>
+  <title>LSV Leilão Silva Veículos - Oportunidades Imperdíveis!</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f7f7f7;
-      color: #333;
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
     }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #121217;
+      color: #eee;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #ff6700;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffa241;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header */
     header {
       background-color: #000;
-      color: #fff;
-      padding: 15px 20px;
+      padding: 20px 40px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
+      border-bottom: 3px solid #ff6700;
     }
     header img {
-      height: 70px;
+      height: 90px;
     }
     nav {
-      margin-top: 10px;
+      display: flex;
+      gap: 30px;
+      font-weight: 700;
+      font-size: 1.1em;
     }
     nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      color: #eee;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #ff6700;
+      border-bottom: 2px solid #ff6700;
+      padding-bottom: 3px;
     }
     .social-links {
       display: flex;
-      align-items: center;
       gap: 15px;
+      align-items: center;
       margin-top: 10px;
     }
     .social-links a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
       background-color: #3b5998;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9em;
+      display: inline-block;
+      white-space: nowrap;
     }
-    .social-links .whatsapp-placeholder {
-      background-color: #888;
+    .whatsapp-placeholder {
+      background-color: #555;
+      padding: 10px 18px;
+      border-radius: 6px;
+      opacity: 0.5;
+      font-weight: 600;
+      font-size: 0.9em;
       cursor: not-allowed;
-      opacity: 0.6;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 14px;
+      white-space: nowrap;
     }
 
+    /* Hero Section */
+    .hero {
+      background-color: #1c1c23;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 3px solid #ff6700;
+    }
+    .hero img {
+      max-width: 180px;
+      margin-bottom: 25px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #ff6700;
+      text-shadow: 0 0 10px #ff6700;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.3em;
+      color: #ccc;
+    }
+    .hero p strong {
+      color: #ff6700;
+    }
+
+    /* Main container */
     main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 15px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    h1, h2 {
-      color: #d35400;
-    }
-    .intro {
-      font-size: 1.1em;
+
+    /* Motos Section */
+    #motos h2 {
+      font-size: 2.2em;
       margin-bottom: 30px;
+      color: #ff6700;
+      text-align: center;
+      text-shadow: 0 0 8px #ff6700;
     }
     .motos-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 20px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 30px;
     }
     .moto-card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      background: #18181f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgb(255 103 0 / 0.45);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .moto-card img {
-      max-width: 100%;
-      height: auto;
-      border-bottom: 1px solid #eee;
-      margin-bottom: 10px;
-      border-radius: 4px;
+    .moto-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgb(255 103 0 / 0.85);
     }
-    .moto-card h3 {
-      margin: 0 0 8px 0;
-      color: #000;
+    .moto-image {
+      flex-shrink: 0;
+      overflow: hidden;
+      border-bottom: 3px solid #ff6700;
+    }
+    .moto-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: scale 0.4s ease;
+    }
+    .moto-card:hover .moto-image img {
+      scale: 1.05;
+    }
+    .moto-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .moto-title {
+      font-size: 1.5em;
+      margin-bottom: 12px;
+      color: #ff6700;
+      font-weight: 700;
+      text-shadow: 0 0 4px #ff6700;
     }
     .moto-info {
-      font-size: 0.95em;
-      color: #555;
-      text-align: center;
-      margin-bottom: 5px;
+      font-size: 1em;
+      margin-bottom: 16px;
+      color: #ddd;
+      line-height: 1.3;
     }
     .price {
-      font-weight: bold;
-      color: #d35400;
-      margin-bottom: 8px;
+      font-size: 1.35em;
+      font-weight: 700;
+      color: #ffa241;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 6px #ffa241;
     }
-    section.informative {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    .status {
+      font-weight: 600;
+      color: #ff4500;
+      letter-spacing: 0.8px;
+      font-size: 0.95em;
     }
-    section.informative ul {
-      list-style: disc inside;
-      padding-left: 0;
-      color: #333;
+
+    /* Informative Section */
+    #sobre {
+      background: #1c1c23;
+      padding: 40px 30px;
+      border-radius: 12px;
+      margin-top: 60px;
+      box-shadow: 0 0 20px rgb(255 103 0 / 0.45);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    section.contact {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      max-width: 500px;
-      margin: 0 auto 40px;
+    #sobre h2 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+      color: #ff6700;
+      text-align: center;
+      text-shadow: 0 0 8px #ff6700;
+    }
+    #sobre ul {
+      list-style: none;
+      padding: 0;
+      color: #eee;
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #sobre ul li {
+      position: relative;
+      padding-left: 38px;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    #sobre ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #ff6700;
+      font-weight: 900;
+      font-size: 1.3em;
+      text-shadow: 0 0 6px #ff6700;
+    }
+
+    /* Contact */
+    #contato {
+      background: #18181f;
+      max-width: 700px;
+      margin: 60px auto 80px;
+      border-radius: 12px;
+      padding: 35px 40px;
+      box-shadow: 0 0 20px rgb(255 103 0 / 0.55);
       text-align: center;
     }
-    footer {
-      background-color: #222;
+    #contato h2 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #ff6700;
+      text-shadow: 0 0 6px #ff6700;
+    }
+    #contato p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+    #contato a.facebook-link {
+      background-color: #3b5998;
+      padding: 12px 30px;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      font-size: 1.1em;
+      display: inline-block;
+      box-shadow: 0 0 12px #3b5998;
+      transition: background-color 0.3s ease;
+    }
+    #contato a.facebook-link:hover {
+      background-color: #2d4373;
+      box-shadow: 0 0 20px #2d4373;
+    }
+    #contato .whatsapp-note {
+      margin-top: 30px;
       color: #aaa;
+      font-style: italic;
+      font-size: 1em;
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #666;
       text-align: center;
-      padding: 15px 10px;
+      padding: 18px 15px;
       font-size: 0.9em;
+      border-top: 3px solid #ff6700;
+      user-select: none;
+    }
+
+    /* Responsive smaller screens */
+    @media (max-width: 480px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        margin: 8px 12px;
+      }
+      header {
+        justify-content: center;
+        gap: 20px;
+      }
+      .hero h1 {
+        font-size: 2.1em;
+      }
+      .moto-content {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div>
-      <img src="https://i.imgur.com/8fjs4dP.png" alt="LVS Leilão - Veículos Silva Logo" />
-    </div>
+    <a href="#inicio" aria-label="Logo LSV Leilão Silva Veículos">
+      <img src="https://i.imgur.com/80z8EjU.png" alt="LSV Leilão Silva Veículos Logo" />
+    </a>
     <nav>
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
@@ -151,69 +326,111 @@
       <a href="#contato">Contato</a>
     </nav>
     <div class="social-links">
-      <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <div class="whatsapp-placeholder" title="WhatsApp disponível em breve">WhatsApp (Em breve)</div>
+      <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer" aria-label="Facebook LSV Leilão">Facebook</a>
+      <div class="whatsapp-placeholder" title="WhatsApp disponível em breve" aria-disabled="true">WhatsApp (Em breve)</div>
     </div>
   </header>
 
-  <main>
-    <section id="inicio">
-      <h1>LVS Leilão - Veículos Silva</h1>
-      <p class="intro">
-        Bem-vindo ao LVS Leilão, seu destino para encontrar veículos recuperados de financiamento com preços baixos e acessíveis. Aproveite as oportunidades incríveis em motos como Bros 160, Titan 160, Yamaha R15 e muito mais!
-      </p>
-    </section>
+  <section class="hero" id="inicio">
+    <img src="https://i.imgur.com/80z8EjU.png" alt="LSV Leilão Silva Veículos Logo" />
+    <h1>LSV Leilão Silva Veículos</h1>
+    <p><strong>Carros e motos com preços surpreendentes e oportunidades únicas!</strong><br />
+      Adquira veículos recuperados de financiamento com total segurança e transparência. O leilão que você esperava para realizar o melhor negócio está aqui!</p>
+  </section>
 
-    <section id="motos">
-      <h2>Motos com Preços Especiais</h2>
+  <main>
+
+    <section id="motos" aria-label="Lista de motos disponíveis para leilão">
+      <h2>Motos com Preços Imperdíveis</h2>
       <div class="motos-list">
-        <article class="moto-card">
-          <img src="https://i.imgur.com/DrU8Xf5.jpg" alt="Honda Bros 160" />
-          <h3>Honda Bros 160</h3>
-          <div class="price">Preço: A partir de R$ 8.500</div>
-          <div class="moto-info">Status: Recuperada de financiamento</div>
+
+        <article class="moto-card" tabindex="0" aria-describedby="desc-bros160">
+          <div class="moto-image">
+            <img src="https://cdn.pixabay.com/photo/2016/12/06/17/07/bike-1880449_1280.jpg" alt="Honda Bros 160, preta" />
+          </div>
+          <div class="moto-content">
+            <h3 class="moto-title">Honda Bros 160</h3>
+            <p class="price">A partir de R$ 8.500</p>
+            <p id="desc-bros160" class="moto-info">
+              - Ano: 2020 <br />
+              - Motor: 162cc, 4 tempos, Combustível Flex <br />
+              - Quilometragem: Até 25.000 km <br />
+              - Documentação em dia, pronta para transferência <br />
+              - Veículo recuperado de financiamento<br />
+              - Pronta para uso, revisada e garantida <br />
+              - Ideal para quem busca economia e alta performance
+            </p>
+            <p class="status">Status: Recuperada de financiamento</p>
+          </div>
         </article>
-        <article class="moto-card">
-          <img src="https://i.imgur.com/jX6mNkh.jpg" alt="Honda Titan 160" />
-          <h3>Honda Titan 160</h3>
-          <div class="price">Preço: A partir de R$ 7.800</div>
-          <div class="moto-info">Status: Recuperada de financiamento</div>
+
+        <article class="moto-card" tabindex="0" aria-describedby="desc-titan160">
+          <div class="moto-image">
+            <img src="https://cdn.pixabay.com/photo/2019/12/04/08/51/motorcycle-4674575_1280.jpg" alt="Honda Titan 160, vermelha" />
+          </div>
+          <div class="moto-content">
+            <h3 class="moto-title">Honda Titan 160</h3>
+            <p class="price">A partir de R$ 7.800</p>
+            <p id="desc-titan160" class="moto-info">
+              - Ano: 2019 <br />
+              - Motor: 162cc, 4 tempos, Combustível Flex <br />
+              - Quilometragem: Até 30.000 km <br />
+              - Portadora de certificado de recuperação <br />
+              - Revisão completa feita por nossos especialistas <br />
+              - Documentação regularizada pronta para transferência <br />
+              - Popular, confiável e econômica.
+            </p>
+            <p class="status">Status: Recuperada de financiamento</p>
+          </div>
         </article>
-        <article class="moto-card">
-          <img src="https://i.imgur.com/ZRBCdVP.jpg" alt="Yamaha R15" />
-          <h3>Yamaha R15</h3>
-          <div class="price">Preço: A partir de R$ 13.900</div>
-          <div class="moto-info">Status: Recuperada de financiamento</div>
+
+        <article class="moto-card" tabindex="0" aria-describedby="desc-r15">
+          <div class="moto-image">
+            <img src="https://cdn.pixabay.com/photo/2017/06/03/09/30/motorcycle-2367921_1280.jpg" alt="Yamaha R15, esportiva azul" />
+          </div>
+          <div class="moto-content">
+            <h3 class="moto-title">Yamaha R15</h3>
+            <p class="price">A partir de R$ 13.900</p>
+            <p id="desc-r15" class="moto-info">
+              - Ano: 2021 <br />
+              - Motor: 155cc, 4 tempos, tecnologia VVA, Combustível Flex <br />
+              - Quilometragem: Até 20.000 km <br />
+              - Recuperada de financiamento com garantia<br />
+              - Visual esportivo, perfeito para amantes da velocidade <br />
+              - Documentação e IPVA quitados <br />
+              - Excelente custo-benefício para quem quer potência e estilo.
+            </p>
+            <p class="status">Status: Recuperada de financiamento</p>
+          </div>
         </article>
+
       </div>
     </section>
 
-    <section id="sobre" class="informative">
-      <h2>Por que comprar no LVS Leilão?</h2>
+    <section id="sobre" aria-label="Motivos para comprar no LSV Leilão">
+      <h2>Por que comprar no LSV Leilão Silva Veículos?</h2>
       <ul>
-        <li>Veículos recuperados de financiamento com preços abaixo do mercado.</li>
-        <li>Garantia de transparência e segurança na compra.</li>
-        <li>Oportunidade de adquirir motos de alta qualidade e confiabilidade.</li>
+        <li>Veículos revisados e recuperados de financiamento, com garantia de procedência.</li>
+        <li>Os melhores preços do mercado, muito abaixo dos valores convencionais.</li>
+        <li>Transparência total: você conhece o histórico e as condições reais do veículo.</li>
+        <li>Facilidade e segurança na documentação para transferência.</li>
+        <li>Equipe especializada pronta para te orientar em cada etapa do leilão.</li>
+        <li>Oportunidade imperdível para economizar sem abrir mão da qualidade.</li>
       </ul>
     </section>
 
-    <section id="contato" class="contact">
+    <section id="contato" aria-label="Contato com LSV Leilão">
       <h2>Fale Conosco</h2>
-      <p>
-        Entre em contato pelo nosso Facebook para saber mais informações.  
-      </p>
-      <p>
-        <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer" style="color:#d35400; font-weight:bold;">Facebook LVS Leilão</a>
-      </p>
-      <p>
-        WhatsApp será disponibilizado em breve para melhor atendimento.
-      </p>
+      <p>Quer saber mais? Entre em contato pelo nosso Facebook e tire todas as suas dúvidas.</p>
+      <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer" class="facebook-link" aria-label="Facebook LSV Leilão">Nosso Facebook</a>
+      <p class="whatsapp-note">Em breve teremos atendimento via WhatsApp para facilitar ainda mais sua comunicação.</p>
     </section>
+
   </main>
 
   <footer>
-    &copy; 2024 LVS Leilão - Veículos Silva. Todos os direitos reservados.
+    &copy; 2024 LSV Leilão Silva Veículos. Todos os direitos reservados.
   </footer>
-  
+
 </body>
-</html>
+  </html>
