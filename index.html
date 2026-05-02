@@ -1,416 +1,459 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LSV Leilão Silva Veículos - Oportunidades Imperdíveis!</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #121217;
-      color: #eee;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: #ff6700;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #ffa241;
-    }
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    header {
-      background-color: #000;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      border-bottom: 3px solid #ff6700;
-    }
-    header img {
-      height: 90px;
-    }
-    nav {
-      display: flex;
-      gap: 30px;
-      font-weight: 700;
-      font-size: 1.1em;
-    }
-    nav a {
-      color: #eee;
-    }
-    nav a:hover {
-      color: #ff6700;
-      border-bottom: 2px solid #ff6700;
-      padding-bottom: 3px;
-    }
-    .social-links {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .social-links a {
-      background-color: #3b5998;
-      padding: 10px 18px;
-      border-radius: 6px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.9em;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    .whatsapp-placeholder {
-      background-color: #555;
-      padding: 10px 18px;
-      border-radius: 6px;
-      opacity: 0.5;
-      font-weight: 600;
-      font-size: 0.9em;
-      cursor: not-allowed;
-      white-space: nowrap;
-    }
-    .hero {
-      background-color: #1c1c23;
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 3px solid #ff6700;
-    }
-    .hero img {
-      max-width: 220px;
-      margin-bottom: 25px;
-      border-radius: 12px;
-    }
-    .hero h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-      color: #ff6700;
-      text-shadow: 0 0 10px #ff6700;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.3em;
-      color: #ccc;
-    }
-    .hero p strong {
-      color: #ff6700;
-    }
-    main {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    #motos h2 {
-      font-size: 2.2em;
-      margin-bottom: 30px;
-      color: #ff6700;
-      text-align: center;
-      text-shadow: 0 0 8px #ff6700;
-    }
-    .motos-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 30px;
-    }
-    .moto-card {
-      background: #18181f;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgb(255 103 0 / 0.45);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-      cursor: default;
-      padding: 20px;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .moto-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 25px rgb(255 103 0 / 0.85);
-    }
-    .moto-placeholder {
-      height: 180px;
-      width: 100%;
-      border: 3px dashed #ff6700;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ff6700;
-      font-weight: 700;
-      font-size: 1.2em;
-      font-style: italic;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      padding: 0 15px;
-      user-select: none;
-    }
-    .moto-content {
-      color: #ddd;
-      line-height: 1.4;
-    }
-    .moto-title {
-      font-size: 1.5em;
-      margin-bottom: 12px;
-      color: #ff6700;
-      font-weight: 700;
-      text-shadow: 0 0 4px #ff6700;
-    }
-    .moto-info {
-      font-size: 1em;
-      margin-bottom: 16px;
-    }
-    .price {
-      font-size: 1.35em;
-      font-weight: 700;
-      color: #ffa241;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      text-shadow: 0 0 6px #ffa241;
-    }
-    .status {
-      font-weight: 600;
-      color: #ff4500;
-      letter-spacing: 0.8px;
-      font-size: 0.95em;
-    }
-    #sobre {
-      background: #1c1c23;
-      padding: 40px 30px;
-      border-radius: 12px;
-      margin-top: 60px;
-      box-shadow: 0 0 20px rgb(255 103 0 / 0.45);
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #eee;
-      font-size: 1.1em;
-    }
-    #sobre h2 {
-      font-size: 2.2em;
-      margin-bottom: 25px;
-      color: #ff6700;
-      text-align: center;
-      text-shadow: 0 0 8px #ff6700;
-    }
-    #sobre ul {
-      list-style: none;
-      padding: 0;
-    }
-    #sobre ul li {
-      position: relative;
-      padding-left: 38px;
-      margin-bottom: 18px;
-      line-height: 1.4;
-    }
-    #sobre ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      top: 2px;
-      color: #ff6700;
-      font-weight: 900;
-      font-size: 1.3em;
-      text-shadow: 0 0 6px #ff6700;
-    }
-    #contato {
-      background: #18181f;
-      max-width: 700px;
-      margin: 60px auto 80px;
-      border-radius: 12px;
-      padding: 35px 40px;
-      box-shadow: 0 0 20px rgb(255 103 0 / 0.55);
-      text-align: center;
-      color: #ddd;
-    }
-    #contato h2 {
-      font-size: 2em;
-      margin-bottom: 25px;
-      color: #ff6700;
-      text-shadow: 0 0 6px #ff6700;
-    }
-    #contato p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-    #contato a.facebook-link {
-      background-color: #3b5998;
-      padding: 12px 30px;
-      color: #fff;
-      font-weight: 700;
-      border-radius: 8px;
-      font-size: 1.1em;
-      display: inline-block;
-      box-shadow: 0 0 12px #3b5998;
-      transition: background-color 0.3s ease;
-    }
-    #contato a.facebook-link:hover {
-      background-color: #2d4373;
-      box-shadow: 0 0 20px #2d4373;
-    }
-    #contato .whatsapp-note {
-      margin-top: 30px;
-      color: #aaa;
-      font-style: italic;
-      font-size: 1em;
-      opacity: 0.7;
-    }
-    footer {
-      background-color: #000;
-      color: #666;
-      text-align: center;
-      padding: 18px 15px;
-      font-size: 0.9em;
-      border-top: 3px solid #ff6700;
-      user-select: none;
-    }
-    @media (max-width: 480px) {
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      nav a {
-        margin: 8px 12px;
-      }
-      header {
-        justify-content: center;
-        gap: 20px;
-      }
-      .hero h1 {
-        font-size: 2.1em;
-      }
-      .moto-card {
-        padding: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSV Leilão Silva Veículos - Preços IMPERDÍVEIS!</title>
+    <meta name="description" content="Leilão de veículos rebaixados com preços baixíssimos! Fale agora no WhatsApp: +55 12 99663-9104">
+    
+    <!-- WhatsApp Meta Tags -->
+    <meta property="og:title" content="LSV Leilão Silva Veículos - Ofertas IMPERDÍVEIS!">
+    <meta property="og:description" content="Carros e motos rebaixados por preços de LEILÃO! Clique agora no WhatsApp!">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/FF0000/FFFFFF?text=🚗+LEILÃO+LSV">
+    <meta property="og:url" content="https://lsvleilao.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            color: white;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* HEADER / BANNER */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ff0000" width="1200" height="800"/><text x="600" y="400" font-family="Arial" font-size="48" fill="white" text-anchor="middle" dy=".3em">🚗 CARROS REBAIXADOS</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            color: #FFD700;
+            text-shadow: 3px 3px 0 #FF0000;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .cta-hero {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            animation: shake 1s infinite;
+        }
+
+        .cta-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* VEÍCULOS */
+        .veiculos {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 0 #FF0000;
+        }
+
+        .veiculos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .veiculo-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .veiculo-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(255, 107, 53, 0.3);
+            border-color: #FF6B35;
+        }
+
+        .veiculo-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .veiculo-img::after {
+            content: 'ÚLTIMAS UNIDADES!';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FF0000;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .veiculo-info {
+            padding: 25px;
+        }
+
+        .veiculo-nome {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .veiculo-desc {
+            color: #ccc;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .cta-veiculo {
+            width: 100%;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-veiculo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* VANTAGENS */
+        .vantagens {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .vantagens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .vantagem-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .vantagem-item i {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .vantagem-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .final-cta {
+            background: linear-gradient(45deg, #FF0000, #FF6B35);
+            color: white;
+            padding: 1.5rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 15px 40px rgba(255,0,0,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .whatsapp-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .veiculos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                margin: 0 20px;
+            }
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF6B35;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5512996639104?text=🚗%20Oi!%20Vi%20o%20site%20do%20LSV%20Leilão%20e%20quero%20saber%20mais%20sobre%20os%20veículos!" 
+       class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+    </a>
 
-<header>
-  <a href="#inicio" aria-label="Logo LSV Leilão Silva Veículos">
-    <img src="https://i.imgur.com/C84OC2v.png" alt="LSV Leilão Silva Veículos Logo" />
-  </a>
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#motos">Motos</a>
-    <a href="#contato">Contato</a>
-  </nav>
-  <div class="social-links">
-    <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer" aria-label="Facebook LSV Leilão">Facebook</a>
-    <div class="whatsapp-placeholder" title="WhatsApp disponível em breve" aria-disabled="true">WhatsApp (Em breve)</div>
-  </div>
-</header>
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <h1>🚗 LSV LEILÃO SILVA VEÍCULOS</h1>
+        <p>VEÍCULOS REBAIXADOS COM PREÇOS DE <strong>LEILÃO!</strong><br>
+        <span style="color: #FFD700; font-size: 1.2em;">ÚLTIMAS UNIDADES - CORRA!</span></p>
+        <a href="https://wa.me/5512996639104?text=🚗%20Quero%20participar%20do%20leilão%20AGORA!" 
+           class="cta-hero" target="_blank">
+            <i class="fab fa-whatsapp"></i> FALE AGORA NO WHATSAPP
+        </a>
+    </section>
 
-<section class="hero" id="inicio">
-  <img src="https://i.imgur.com/C84OC2v.png" alt="LSV Leilão Silva Veículos Logo" />
-  <h1>LSV Leilão Silva Veículos</h1>
-  <p><strong>Carros e motos com preços surpreendentes e oportunidades únicas!</strong><br />
-  Adquira veículos recuperados de financiamento com total segurança e transparência. O leilão que você esperava para realizar o melhor negócio está aqui!</p>
-</section>
+    <!-- VEÍCULOS -->
+    <section class="veiculos">
+        <h2 class="section-title">🔥 VEÍCULOS DISPONÍVEIS AGORA</h2>
+        <div class="veiculos-grid">
+            <div class="veiculo-card">
+                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23ff4444&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🏍️ CG 160 REBAIXADA</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Lance inicial R$4.500</text></svg>');"></div>
+                <div class="veiculo-info">
+                    <div class="veiculo-nome">🏍️ Honda CG 160 Rebaixada</div>
+                    <div class="veiculo-desc">Perfeita condição! Motor 160cc, rodas aro 17, escapamento esportivo. OPORTUNIDADE ÚNICA!</div>
+                    <a href="https://wa.me/5512996639104?text=🏍️%20Interesse%20na%20CG%20160%20Rebaixada!" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar no WhatsApp
+                    </a>
+                </div>
+            </div>
 
-<main>
+            <div class="veiculo-card">
+                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%230044ff&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🚗 GOL G5 TURBO</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Rebaixado + Som Potente</text></svg>');"></div>
+                <div class="veiculo-info">
+                    <div class="veiculo-nome">🚗 Gol G5 Turbo Rebaixado</div>
+                    <div class="veiculo-desc">Turbo original, suspensão rebaixada, som de 10.000W RMS. PRONTO PARA USAR!</div>
+                    <a href="https://wa.me/5512996639104?text=🚗%20Quero%20ver%20o%20Gol%20G5%20Turbo!" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Falar sobre este carro
+                    </a>
+                </div>
+            </div>
 
-<section id="motos" aria-label="Lista de motos disponíveis para leilão">
-  <h2>Motos com Preços Imperdíveis</h2>
-  <div class="motos-list">
+            <div class="veiculo-card">
+                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23ffaa00&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🏍️ FAN 160cc</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>NOVINHA - Lance R$3.800</text></svg>');"></div>
+                <div class="veiculo-info">
+                    <div class="veiculo-nome">🏍️ Fan 160cc 0km</div>
+                    <div class="veiculo-desc">Zerada de fábrica! Rebaixada profissionalmente. MELHOR PREÇO DO MERCADO!</div>
+                    <a href="https://wa.me/5512996639104?text=🏍️%20Fan%20160cc%200km%20-%20Quero%20mais%20fotos!" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Ver mais fotos agora
+                    </a>
+                </div>
+            </div>
 
-    <article class="moto-card" tabindex="0" aria-describedby="desc-bros160">
-      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
-        Visualize as imagens das motos disponíveis no nosso Facebook
-      </div>
-      <div class="moto-content">
-        <h3 class="moto-title">Honda Bros 160</h3>
-        <p class="price">A partir de R$ 8.500</p>
-        <p id="desc-bros160" class="moto-info">
-          - Ano: 2020 <br />
-          - Motor: 162cc, 4 tempos, Combustível Flex <br />
-          - Quilometragem: Até 25.000 km <br />
-          - Documentação em dia, pronta para transferência <br />
-          - Veículo recuperado de financiamento<br />
-          - Pronta para uso, revisada e garantida <br />
-          - Ideal para quem busca economia e alta performance
-        </p>
-        <p class="status">Status: Recuperada de financiamento</p>
-      </div>
-    </article>
+            <div class="veiculo-card">
+                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23220088&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🚙 UNO MILLE</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Rebaixado + Kit Gás</text></svg>');"></div>
+                <div class="veiculo-info">
+                    <div class="veiculo-nome">🚙 Uno Mille Rebaixado</div>
+                    <div class="veiculo-desc">Com kit gás instalado, suspensão esportiva, rodas aro 15. ECONOMIA!</div>
+                    <a href="https://wa.me/5512996639104?text=🚙%20Uno%20Mille%20-%20Qual%20o%20lance%20mínimo?" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Saber lance mínimo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <article class="moto-card" tabindex="0" aria-describedby="desc-titan160">
-      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
-        Visualize as imagens das motos disponíveis no nosso Facebook
-      </div>
-      <div class="moto-content">
-        <h3 class="moto-title">Honda Titan 160</h3>
-        <p class="price">A partir de R$ 7.800</p>
-        <p id="desc-titan160" class="moto-info">
-          - Ano: 2019 <br />
-          - Motor: 162cc, 4 tempos, Combustível Flex <br />
-          - Quilometragem: Até 30.000 km <br />
-          - Portadora de certificado de recuperação <br />
-          - Revisão completa feita por nossos especialistas <br />
-          - Documentação regularizada pronta para transferência <br />
-          - Popular, confiável e econômica.
-        </p>
-        <p class="status">Status: Recuperada de financiamento</p>
-      </div>
-    </article>
+    <!-- VANTAGENS -->
+    <section class="vantagens">
+        <h2 class="section-title" style="color: white; text-shadow: 2px 2px 0 #FFD700;">💰 POR QUE COMPRAR NO LSV?</h2>
+        <div class="vantagens-grid">
+            <div class="vantagem-item">
+                <i class="fas fa-fire"></i>
+                <h3>Preços de Leilão</h3>
+                <p>50% abaixo do mercado!</p>
+            </div>
+            <div class="vantagem-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Veículos Rebaixados</h3>
+                <p>Todos preparados!</p>
+            </div>
+            <div class="vantagem-item">
+                <i class="fas fa-clock"></i>
+                <h3>Oferta Limitada</h3>
+                <p>Acaba HOJE!</p>
+            </div>
+            <div class="vantagem-item">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Entrega Rápida</h3>
+                <p>Em todo Brasil!</p>
+            </div>
+        </div>
+        <a href="https://wa.me/5512996639104?text=💰%20Quero%20aproveitar%20as%20ofertas%20do%20LSV!" 
+           class="cta-hero" target="_blank" style="font-size: 1.5rem; padding: 1.5rem 4rem;">
+            <i class="fab fa-whatsapp"></i> QUERO PARTICIPAR JÁ!
+        </a>
+    </section>
 
-    <article class="moto-card" tabindex="0" aria-describedby="desc-r15">
-      <div class="moto-placeholder" aria-label="Visualização de fotos não disponível no site">
-        Visualize as imagens das motos disponíveis no nosso Facebook
-      </div>
-      <div class="moto-content">
-        <h3 class="moto-title">Yamaha R15</h3>
-        <p class="price">A partir de R$ 13.900</p>
-        <p id="desc-r15" class="moto-info">
-          - Ano: 2021 <br />
-          - Motor: 155cc, 4 tempos, tecnologia VVA, Combustível Flex <br />
-          - Quilometragem: Até 20.000 km <br />
-          - Recuperada de financiamento com garantia<br />
-          - Visual esportivo, perfeito para amantes da velocidade <br />
-          - Documentação e IPVA quitados <br />
-          - Excelente custo-benefício para quem quer potência e estilo.
-        </p>
-        <p class="status">Status: Recuperada de financiamento</p>
-      </div>
-    </article>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">📱 +55 12 99663-9104</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2rem;">Fale AGORA e garanta seu veículo!</p>
+        <a href="https://wa.me/5512996639104?text=📞%20Ligação%20do%20site%20LSV%20-%20Estou%20interessado!" 
+           class="final-cta" target="_blank">
+            <i class="fab fa-whatsapp"></i> ÚLTIMA CHANCE - WHATSAPP!
+        </a>
+        <p style="margin-top: 30px; opacity: 0.8;">LSV Leilão Silva Veículos © 2024 - Todos os direitos reservados</p>
+    </footer>
 
-  </div>
-</section>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-<section id="sobre" aria-label="Motivos para comprar no LSV Leilão">
-  <h2>Por que comprar no LSV Leilão Silva Veículos?</h2>
-  <ul>
-    <li>Veículos revisados e recuperados de financiamento, com garantia de procedência.</li>
-    <li>Os melhores preços do mercado, muito abaixo dos valores convencionais.</li>
-    <li>Transparência total: você conhece o histórico e as condições reais do veículo.</li>
-    <li>Facilidade e segurança na documentação para transferência.</li>
-    <li>Equipe especializada pronta para te orientar em cada etapa do leilão.</li>
-    <li>Oportunidade imperdível para economizar sem abrir mão da qualidade.</li>
-  </ul>
-</section>
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
 
-<section id="contato" aria-label="Contato com LSV Leilão">
-  <h2>Fale Conosco</h2>
-  <p>Quer saber mais? Entre em contato pelo nosso Facebook e tire todas as suas dúvidas.</p>
-  <a href="https://www.facebook.com/share/18bFBQq5rg/" target="_blank" rel="noopener noreferrer" class="facebook-link" aria-label="Facebook LSV Leilão">Nosso Facebook</a>
-  <p class="whatsapp-note">Em breve teremos atendimento via WhatsApp para facilitar ainda mais sua comunicação.</p>
-</section>
-
-</main>
-
-<footer>
-  &copy; 2024 LSV Leilão Silva Veículos. Todos os direitos reservados.
-</footer>
-
+        // Auto WhatsApp click tracking (opcional)
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', () => {
+                // Aqui você pode adicionar Google Analytics ou pixel do Facebook
+                console.log('WhatsApp clicked!');
+            });
+        });
+    </script>
 </body>
-      </html>
+                                               </html>
