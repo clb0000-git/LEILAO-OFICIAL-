@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSV Leilão Silva Veículos - Preços IMPERDÍVEIS!</title>
-    <meta name="description" content="Leilão de veículos rebaixados com preços baixíssimos! Fale agora no WhatsApp: +55 12 99663-9104">
+    <title>LSV Leilão Silva Veículos - 🏍️ MOTOS 150cc/160cc em GUARULHOS-SP!</title>
+    <meta name="description" content="🏍️ Leilão MOTOS 150cc 160cc + CARROS! Av. Coqueiral, 217 - Guarulhos-SP | WhatsApp: +55 12 99663-9104">
     
-    <!-- WhatsApp Meta Tags -->
-    <meta property="og:title" content="LSV Leilão Silva Veículos - Ofertas IMPERDÍVEIS!">
-    <meta property="og:description" content="Carros e motos rebaixados por preços de LEILÃO! Clique agora no WhatsApp!">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/FF0000/FFFFFF?text=🚗+LEILÃO+LSV">
-    <meta property="og:url" content="https://lsvleilao.com">
+    <!-- Open Graph -->
+    <meta property="og:title" content="🏍️ LSV Leilão - MOTOS 150cc/160cc | Guarulhos-SP">
+    <meta property="og:description" content="Leilão presencial! Av. Coqueiral, 217 - Cidade Serodio, Guarulhos-SP | CLIQUE WhatsApp!">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/ff4444/ffffff?text=%F0%9F%8F%89%F0%9F%92%A5+LEIL%C3%83O+GUARULHOS">
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -25,44 +24,86 @@
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #000 100%);
             color: white;
+            line-height: 1.6;
         }
 
-        .whatsapp-btn {
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            width: 70px;
-            height: 70px;
+            bottom: 25px;
+            right: 25px;
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(45deg, #25D366, #20ba5a, #25D366);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            animation: pulse 2s infinite;
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+            z-index: 9999;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: floatPulse 2s ease-in-out infinite;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.7);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes floatPulse {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* HEADER / BANNER */
+        /* HEADER COM LOCALIZAÇÃO */
+        .header-local {
+            background: linear-gradient(135deg, #FF1744, #FF5722);
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-local::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .local-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .local-icon {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* HERO BANNER */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ff0000" width="1200" height="800"/><text x="600" y="400" font-family="Arial" font-size="48" fill="white" text-anchor="middle" dy=".3em">🚗 CARROS REBAIXADOS</text></svg>');
+            min-height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23ff1744" width="1920" height="1080"/><text x="960" y="500" font-family="Arial" font-size="85" fill="%23FFD700" text-anchor="middle" font-weight="bold" dy=".3em">🏍️ LEILÃO PRESENCIAL GUARULHOS</text><text x="960" y="580" font-size="45" fill="white" text-anchor="middle">Av. Coqueiral, 217</text></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -74,116 +115,221 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 800;
-            color: #FFD700;
-            text-shadow: 3px 3px 0 #FF0000;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFEB3B, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
-            animation: bounce 2s infinite;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px #FFD700); }
+            to { filter: drop-shadow(0 0 25px #FFD700); }
         }
 
-        .hero p {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            margin-bottom: 2rem;
-            color: white;
-        }
-
-        .cta-hero {
-            background: linear-gradient(45deg, #FF6B35, #F7931E);
-            color: white;
-            padding: 1.2rem 3rem;
-            font-size: 1.3rem;
+        .hero-subtitle {
+            font-size: clamp(1.3rem, 4vw, 2.2rem);
+            color: #fff;
+            margin-bottom: 1rem;
             font-weight: 700;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-            animation: shake 1s infinite;
         }
 
-        .cta-hero:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        .hero-endereco {
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            border: 2px solid #FFD700;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-urgency {
+            background: linear-gradient(45deg, #FF1744, #FF5722);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            animation: shake 1.5s infinite;
+            box-shadow: 0 10px 30px rgba(255, 23, 68, 0.4);
         }
 
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
         }
 
-        /* VEÍCULOS */
-        .veiculos {
-            padding: 80px 20px;
+        .cta-hero {
+            background: linear-gradient(45deg, #25D366, #20ba5a);
+            color: white;
+            padding: 1.5rem 4rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 800;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+            margin-bottom: 2rem;
+        }
+
+        .cta-hero:hover, .cta-hero-map:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(37, 211, 102, 0.6);
+        }
+
+        .cta-hero-map {
+            background: linear-gradient(45deg, #FF5722, #FF8F00);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 12px 35px rgba(255, 87, 34, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 100px 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: #FFD700;
-            margin-bottom: 3rem;
-            text-shadow: 2px 2px 0 #FF0000;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4rem;
+            position: relative;
         }
 
+        /* LOCALIZAÇÃO MAPA */
+        .localizacao {
+            background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            border: 3px solid #FF5722;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(45deg, #FF5722, #FFD700);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::after {
+            content: '🗺️ GOOGLE MAPS';
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            animation: pulseMap 2s infinite;
+        }
+
+        @keyframes pulseMap {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .endereco-completo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #FFD700;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* VEÍCULOS GRID */
         .veiculos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .veiculo-card {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 20px;
+            background: linear-gradient(145deg, #2d2d2d, #1e1e1e);
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            transition: all 0.4s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 3px solid transparent;
             position: relative;
         }
 
         .veiculo-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(255, 107, 53, 0.3);
-            border-color: #FF6B35;
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 35px 80px rgba(255, 107, 53, 0.4);
+            border-color: #FF5722;
         }
 
         .veiculo-img {
-            height: 250px;
+            height: 220px;
             background-size: cover;
             background-position: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .veiculo-img::after {
-            content: 'ÚLTIMAS UNIDADES!';
+        .veiculo-img::before {
+            content: '🏆 ÚLTIMA UNIDADE!';
             position: absolute;
             top: 15px;
-            right: 15px;
-            background: #FF0000;
+            right: -40px;
+            background: linear-gradient(45deg, #FF1744, #FF5722);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            animation: blink 1.5s infinite;
+            padding: 8px 50px;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: 800;
+            animation: slideIn 2s ease-in-out infinite;
+            z-index: 2;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
+        @keyframes slideIn {
+            0%, 100% { transform: rotate(45deg) translateX(0); }
+            50% { transform: rotate(45deg) translateX(-10px); }
         }
 
         .veiculo-info {
@@ -191,27 +337,35 @@
         }
 
         .veiculo-nome {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: #FFD700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        .veiculo-cilindrada {
+            color: #FF5722;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .veiculo-desc {
-            color: #ccc;
-            line-height: 1.5;
+            color: #ddd;
+            font-size: 0.95rem;
             margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .cta-veiculo {
             width: 100%;
-            background: linear-gradient(45deg, #25D366, #128C7E);
+            background: linear-gradient(45deg, #25D366, #20ba5a);
             color: white;
-            padding: 15px;
-            font-size: 1.1rem;
+            padding: 14px 20px;
+            font-size: 1rem;
             font-weight: 700;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -219,241 +373,198 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
         }
 
         .cta-veiculo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
         }
 
         /* VANTAGENS */
         .vantagens {
-            background: linear-gradient(135deg, #FF6B35, #F7931E);
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #FF1744, #FF5722, #FF8F00);
             text-align: center;
         }
 
         .vantagens-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             max-width: 1200px;
-            margin: 0 auto 50px;
+            margin: 0 auto 60px;
         }
 
-        .vantagem-item {
-            padding: 30px;
-            background: rgba(255,255,255,0.1);
+        .vantagem-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
+            padding: 40px 25px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
         }
 
-        .vantagem-item i {
-            font-size: 3rem;
-            color: #FFD700;
+        .vantagem-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.25);
+            border-color: #FFD700;
+        }
+
+        .vantagem-icon {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #FFD700, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
         }
 
-        .vantagem-item h3 {
-            font-size: 1.5rem;
+        .vantagem-titulo {
+            font-size: 1.4rem;
+            font-weight: 800;
             margin-bottom: 15px;
-            font-weight: 700;
+            color: white;
         }
 
         /* FOOTER */
         .footer {
             background: #000;
-            padding: 40px 20px;
+            padding: 60px 20px 30px;
             text-align: center;
         }
 
+        .contato-grande {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #25D366, #20ba5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .endereco-footer {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #FF5722;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
         .final-cta {
-            background: linear-gradient(45deg, #FF0000, #FF6B35);
+            background: linear-gradient(45deg, #FF1744, #FF5722);
             color: white;
-            padding: 1.5rem 4rem;
-            font-size: 1.4rem;
-            font-weight: 800;
+            padding: 2rem 5rem;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            font-weight: 900;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin: 20px 0;
+            margin: 30px 0;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 15px 40px rgba(255,0,0,0.4);
-            animation: pulse 2s infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 20px 60px rgba(255, 23, 68, 0.5);
+            animation: pulseBig 2s infinite;
+        }
+
+        @keyframes pulseBig {
+            0% { box-shadow: 0 20px 60px rgba(255, 23, 68, 0.5); }
+            50% { box-shadow: 0 30px 80px rgba(255, 23, 68, 0.8); }
+            100% { box-shadow: 0 20px 60px rgba(255, 23, 68, 0.5); }
         }
 
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            .whatsapp-btn {
-                bottom: 15px;
-                right: 15px;
-                width: 60px;
-                height: 60px;
-            }
-            
-            .veiculos-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .hero h1 {
-                margin: 0 20px;
-            }
-        }
-
-        /* SCROLLBAR */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #FF6B35;
-            border-radius: 5px;
+            .section { padding: 60px 15px; }
+            .veiculos-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 65px; height: 65px; }
+            .local-info { flex-direction: column; gap: 10px; font-size: 1rem; }
+            .localizacao { padding: 30px 20px; }
+            .map-placeholder { height: 250px; font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5512996639104?text=🚗%20Oi!%20Vi%20o%20site%20do%20LSV%20Leilão%20e%20quero%20saber%20mais%20sobre%20os%20veículos!" 
-       class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+    <!-- HEADER LOCALIZAÇÃO -->
+    <header class="header-local">
+        <div class="local-info">
+            <i class="fas fa-map-marker-alt local-icon"></i>
+            <span>📍 Av. Coqueiral, 217 - Cidade Serodio, Guarulhos-SP, 07150-000</span>
+            <i class="fas fa-motorcycle"></i>
+        </div>
+    </header>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5512996639104?text=🏍️%20Oi!%20Leilão%20Guarulhos%20-%20Av.%20Coqueiral%20217!" 
+       class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" style="font-size: 2.2rem;"></i>
     </a>
 
     <!-- HERO BANNER -->
     <section class="hero">
-        <h1>🚗 LSV LEILÃO SILVA VEÍCULOS</h1>
-        <p>VEÍCULOS REBAIXADOS COM PREÇOS DE <strong>LEILÃO!</strong><br>
-        <span style="color: #FFD700; font-size: 1.2em;">ÚLTIMAS UNIDADES - CORRA!</span></p>
-        <a href="https://wa.me/5512996639104?text=🚗%20Quero%20participar%20do%20leilão%20AGORA!" 
+        <h1>🏍️ LSV LEILÃO SILVA VEÍCULOS</h1>
+        <p class="hero-subtitle">LEILÃO PRESENCIAL • MOTOS 150cc • 160cc • 300cc + CARROS</p>
+        <div class="hero-endereco">
+            📍 <strong>Av. Coqueiral, 217 - Cidade Serodio</strong><br>
+            Guarulhos-SP, 07150-000
+        </div>
+        <div class="hero-urgency">⚡ ÚLTIMAS 13 UNIDADES - LEILÃO HOJE! ⚡</div>
+        <a href="https://wa.me/5512996639104?text=🚀%20Leilão%20Guarulhos!%20Quero%20participar%20da%20Av.%20Coqueiral!" 
            class="cta-hero" target="_blank">
-            <i class="fab fa-whatsapp"></i> FALE AGORA NO WHATSAPP
+            <i class="fab fa-whatsapp"></i> FALE NO WHATSAPP JÁ!
         </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Coqueiral,+217+-+Cidade+Serodio,+Guarulhos+-+SP,+07150-000" 
+           class="cta-hero-map" target="_blank">
+            <i class="fas fa-map-marker-alt"></i> VER LOCALIZAÇÃO
+        </a>
+    </section>
+
+    <!-- LOCALIZAÇÃO MAPA -->
+    <section class="localizacao">
+        <h3 style="font-size: 2.2rem; margin-bottom: 30px; color: #FFD700;">📍 ONDE ESTÁ O LEILÃO?</h3>
+        <div class="map-placeholder"></div>
+        <div class="endereco-completo">
+            🏢 <strong>Av. Coqueiral, 217</strong><br>
+            Cidade Serodio, Guarulhos - SP<br>
+            CEP: 07150-000
+        </div>
+        <p style="color: #ccc; font-size: 1.1rem; margin-top: 20px;">
+            🕒 Aberto hoje até 22h | Estacionamento grátis | 
+            <a href="https://wa.me/5512996639104?text=📍%20Como%20chegar%20na%20Av.%20Coqueiral%20217?" 
+               style="color: #25D366; font-weight: 700;">Pergunte como chegar!</a>
+        </p>
     </section>
 
     <!-- VEÍCULOS -->
-    <section class="veiculos">
-        <h2 class="section-title">🔥 VEÍCULOS DISPONÍVEIS AGORA</h2>
+    <section class="section">
+        <h2 class="section-title">🏆 13 VEÍCULOS NO LEILÃO DA AV. COQUEIRAL</h2>
         <div class="veiculos-grid">
+            <!-- MOTOS 150cc -->
             <div class="veiculo-card">
-                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23ff4444&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🏍️ CG 160 REBAIXADA</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Lance inicial R$4.500</text></svg>');"></div>
+                <div class="veiculo-img" style="background: linear-gradient(45deg, #FF6B6B, #FF8E8E); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🏍️</div>
                 <div class="veiculo-info">
-                    <div class="veiculo-nome">🏍️ Honda CG 160 Rebaixada</div>
-                    <div class="veiculo-desc">Perfeita condição! Motor 160cc, rodas aro 17, escapamento esportivo. OPORTUNIDADE ÚNICA!</div>
-                    <a href="https://wa.me/5512996639104?text=🏍️%20Interesse%20na%20CG%20160%20Rebaixada!" class="cta-veiculo" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Consultar no WhatsApp
+                    <div class="veiculo-nome">Honda CG 150 Fan</div>
+                    <div class="veiculo-cilindrada">150cc • 2019 • 25.000km</div>
+                    <div class="veiculo-desc">Rebaixada, rodas liga leve. Retirada na Av. Coqueiral!</div>
+                    <a href="https://wa.me/5512996639104?text=🏍️%20CG%20150%20Fan%20-%20Guarulhos!" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Consultar agora
                     </a>
                 </div>
             </div>
 
             <div class="veiculo-card">
-                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%230044ff&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🚗 GOL G5 TURBO</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Rebaixado + Som Potente</text></svg>');"></div>
+                <div class="veiculo-img" style="background: linear-gradient(45deg, #4CAF50, #81C784); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🏍️</div>
                 <div class="veiculo-info">
-                    <div class="veiculo-nome">🚗 Gol G5 Turbo Rebaixado</div>
-                    <div class="veiculo-desc">Turbo original, suspensão rebaixada, som de 10.000W RMS. PRONTO PARA USAR!</div>
-                    <a href="https://wa.me/5512996639104?text=🚗%20Quero%20ver%20o%20Gol%20G5%20Turbo!" class="cta-veiculo" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Falar sobre este carro
+                    <div class="veiculo-nome">Honda CG 160 Titan</div>
+                    <div class="veiculo-cilindrada">160cc • 2021 • 15.000km</div>
+                    <div class="veiculo-desc">Quase zero! Busque hoje na Av. Coqueiral 217!</div>
+                    <a href="https://wa.me/5512996639104?text=🏍️%20CG%20160%20Titan%20-%20Retirada%20Guarulhos!" class="cta-veiculo" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Ver fotos
                     </a>
                 </div>
             </div>
 
             <div class="veiculo-card">
-                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23ffaa00&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🏍️ FAN 160cc</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>NOVINHA - Lance R$3.800</text></svg>');"></div>
-                <div class="veiculo-info">
-                    <div class="veiculo-nome">🏍️ Fan 160cc 0km</div>
-                    <div class="veiculo-desc">Zerada de fábrica! Rebaixada profissionalmente. MELHOR PREÇO DO MERCADO!</div>
-                    <a href="https://wa.me/5512996639104?text=🏍️%20Fan%20160cc%200km%20-%20Quero%20mais%20fotos!" class="cta-veiculo" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Ver mais fotos agora
-                    </a>
-                </div>
-            </div>
-
-            <div class="veiculo-card">
-                <div class="veiculo-img" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%23220088&quot; width=&quot;400&quot; height=&quot;250&quot; rx=&quot;10&quot;/><text x=&quot;200&quot; y=&quot;130&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;white&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;>🚙 UNO MILLE</text><text x=&quot;200&quot; y=&quot;170&quot; font-size=&quot;18&quot; fill=&quot;#FFD700&quot; text-anchor=&quot;middle&quot;>Rebaixado + Kit Gás</text></svg>');"></div>
-                <div class="veiculo-info">
-                    <div class="veiculo-nome">🚙 Uno Mille Rebaixado</div>
-                    <div class="veiculo-desc">Com kit gás instalado, suspensão esportiva, rodas aro 15. ECONOMIA!</div>
-                    <a href="https://wa.me/5512996639104?text=🚙%20Uno%20Mille%20-%20Qual%20o%20lance%20mínimo?" class="cta-veiculo" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Saber lance mínimo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VANTAGENS -->
-    <section class="vantagens">
-        <h2 class="section-title" style="color: white; text-shadow: 2px 2px 0 #FFD700;">💰 POR QUE COMPRAR NO LSV?</h2>
-        <div class="vantagens-grid">
-            <div class="vantagem-item">
-                <i class="fas fa-fire"></i>
-                <h3>Preços de Leilão</h3>
-                <p>50% abaixo do mercado!</p>
-            </div>
-            <div class="vantagem-item">
-                <i class="fas fa-bolt"></i>
-                <h3>Veículos Rebaixados</h3>
-                <p>Todos preparados!</p>
-            </div>
-            <div class="vantagem-item">
-                <i class="fas fa-clock"></i>
-                <h3>Oferta Limitada</h3>
-                <p>Acaba HOJE!</p>
-            </div>
-            <div class="vantagem-item">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Entrega Rápida</h3>
-                <p>Em todo Brasil!</p>
-            </div>
-        </div>
-        <a href="https://wa.me/5512996639104?text=💰%20Quero%20aproveitar%20as%20ofertas%20do%20LSV!" 
-           class="cta-hero" target="_blank" style="font-size: 1.5rem; padding: 1.5rem 4rem;">
-            <i class="fab fa-whatsapp"></i> QUERO PARTICIPAR JÁ!
-        </a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">📱 +55 12 99663-9104</h2>
-        <p style="margin-bottom: 30px; font-size: 1.2rem;">Fale AGORA e garanta seu veículo!</p>
-        <a href="https://wa.me/5512996639104?text=📞%20Ligação%20do%20site%20LSV%20-%20Estou%20interessado!" 
-           class="final-cta" target="_blank">
-            <i class="fab fa-whatsapp"></i> ÚLTIMA CHANCE - WHATSAPP!
-        </a>
-        <p style="margin-top: 30px; opacity: 0.8;">LSV Leilão Silva Veículos © 2024 - Todos os direitos reservados</p>
-    </footer>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Auto WhatsApp click tracking (opcional)
-        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-            link.addEventListener('click', () => {
-                // Aqui você pode adicionar Google Analytics ou pixel do Facebook
-                console.log('WhatsApp clicked!');
-            });
-        });
-    </script>
-</body>
-                                               </html>
+                <div class="veiculo-img" style="background: linear-gradient(45deg, #2196F3, #64B5F6); display: flex; align-items: center; justify-content: center; font-
