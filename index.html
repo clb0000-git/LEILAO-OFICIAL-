@@ -1,508 +1,357 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
     body {
-        font-family: 'Inter', sans-serif;
-        background: var(--gradient-end);
-        color: var(--text-light);
+        font-family: 'Poppins', sans-serif;
+        background-color: #0f0f0f;
+        color: #fff;
         line-height: 1.6;
-        overflow-x: hidden;
     }
-
-    /* Animated Background */
-    .bg-animation {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        overflow: hidden;
-    }
-
-    .bg-animation::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: 
-            radial-gradient(ellipse at 20% 80%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 20%, rgba(45, 58, 79, 0.15) 0%, transparent 50%);
-        animation: pulse 15s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { transform: scale(1) rotate(0deg); }
-        50% { transform: scale(1.1) rotate(5deg); }
-    }
-
-    /* Navigation */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
+    
+    /* Cabeçalho */
+    header {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         padding: 1rem 5%;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(13, 17, 23, 0.9);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(201, 162, 39, 0.1);
-        transition: all 0.3s ease;
     }
-
-    nav.scrolled {
-        padding: 0.75rem 5%;
-        background: rgba(13, 17, 23, 0.95);
-    }
-
+    
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--accent);
-        text-decoration: none;
+        color: #ffd700;
     }
-
-    .logo span {
-        color: var(--text-light);
-    }
-
-    .nav-whatsapp {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--success);
-        color: var(--primary);
-        padding: 0.75rem 1.25rem;
-        border-radius: 50px;
+    
+    .whatsapp-btn-small {
+        background: #25d366;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
         text-decoration: none;
         font-weight: 600;
         font-size: 0.9rem;
-        transition: all 0.3s ease;
     }
-
-    .nav-whatsapp:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(74, 222, 128, 0.3);
-    }
-
-    /* Hero Section */
+    
+    /* Hero */
     .hero {
+        padding: 8rem 5% 4rem;
+        text-align: center;
+        background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 8rem 5% 4rem;
-        position: relative;
+        justify-content: center;
     }
-
-    .hero-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
+    
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid #ffd700;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        background: #333;
     }
-
-    .hero-content {
-        opacity: 0;
-        animation: fadeInUp 1s ease forwards;
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
     }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    
+    .hero h1 span {
+        color: #ffd700;
     }
-
-    .hero-badge {
+    
+    .subtitle {
+        color: #aaa;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .tagline {
+        color: #888;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(201, 162, 39, 0.15);
-        border: 1px solid rgba(201, 162, 39, 0.3);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        color: var(--accent);
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-badge::before {
-        content: '';
-        width: 8px;
-        height: 8px;
-        background: var(--accent);
-        border-radius: 50%;
-        animation: blink 2s infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.3; }
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        line-height: 1.1;
-        margin-bottom: 1rem;
-    }
-
-    .hero h1 .highlight {
-        color: var(--accent);
-        position: relative;
-    }
-
-    .hero-description {
-        font-size: 1.125rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        max-width: 500px;
-    }
-
-    .hero-cta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: var(--accent);
-        color: var(--primary);
+        background: #25d366;
+        color: #fff;
         padding: 1rem 2rem;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
+        font-size: 1.1rem;
+        transition: transform 0.3s;
     }
-
-    .btn-primary:hover {
-        background: var(--accent-hover);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(201, 162, 39, 0.3);
-    }
-
-    .btn-secondary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: transparent;
-        border: 2px solid rgba(201, 162, 39, 0.3);
-        color: var(--text-light);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-        border-color: var(--accent);
-        background: rgba(201, 162, 39, 0.1);
-    }
-
-    /* Hero Image */
-    .hero-image {
-        position: relative;
-        opacity: 0;
-        animation: fadeInUp 1s ease 0.3s forwards;
-    }
-
-    .hero-image-wrapper {
-        position: relative;
-        border-radius: 30px;
-        overflow: hidden;
-        border: 3px solid rgba(201, 162, 39, 0.3);
-    }
-
-    .hero-image-wrapper img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.5s ease;
-    }
-
-    .hero-image-wrapper:hover img {
+    
+    .cta-button:hover {
         transform: scale(1.05);
     }
-
-    .hero-image-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem;
-        background: linear-gradient(transparent, rgba(13, 17, 23, 0.95));
+    
+    /* Seção Sobre */
+    .about {
+        padding: 4rem 5%;
+        background: #0f0f0f;
     }
-
-    .verified-badge {
-        display: inline-flex;
+    
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .section-title span {
+        color: #ffd700;
+    }
+    
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .about-content p {
+        color: #aaa;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Valores */
+    .values {
+        padding: 4rem 5%;
+        background: #1a1a2e;
+    }
+    
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .value-card {
+        background: #16213e;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+    }
+    
+    .value-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .value-card h3 {
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+    }
+    
+    .value-card p {
+        color: #888;
+        font-size: 0.9rem;
+    }
+    
+    /* Depoimentos */
+    .testimonials {
+        padding: 4rem 5%;
+        background: #0f0f0f;
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .testimonial-card {
+        background: #1a1a2e;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .stars {
+        color: #ffd700;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-text {
+        color: #aaa;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+        color: #ffd700;
+        font-weight: 600;
+    }
+    
+    /* Redes Sociais */
+    .social {
+        padding: 4rem 5%;
+        background: #1a1a2e;
+        text-align: center;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-link {
+        display: flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(74, 222, 128, 0.15);
-        border: 1px solid rgba(74, 222, 128, 0.3);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        color: var(--success);
-    }
-
-    /* Floating WhatsApp */
-    .floating-whatsapp {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 999;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        background: #25D366;
-        color: white;
+        background: #16213e;
+        color: #fff;
         padding: 1rem 1.5rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
-        transition: all 0.3s ease;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .floating-whatsapp:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 50px rgba(37, 211, 102, 0.5);
-    }
-
-    /* Section Styles */
-    section {
-        padding: 6rem 5%;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    .section-header h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-
-    .section-header h2 span {
-        color: var(--accent);
-    }
-
-    .section-header p {
-        color: var(--text-muted);
-        font-size: 1.125rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* About Section */
-    .about {
-        background: linear-gradient(180deg, var(--gradient-end) 0%, rgba(26, 35, 50, 0.5) 100%);
-    }
-
-    .about-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        gap: 4rem;
-        align-items: center;
-    }
-
-    .about-image {
-        position: relative;
-    }
-
-    .about-image img {
-        width: 100%;
-        border-radius: 20px;
-        border: 2px solid rgba(201, 162, 39, 0.2);
-    }
-
-    .about-image::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        width: 100px;
-        height: 100px;
-        border: 2px solid rgba(201, 162, 39, 0.3);
-        border-radius: 20px;
-        z-index: -1;
-    }
-
-    .about-content h3 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-        color: var(--accent);
-    }
-
-    .about-content p {
-        color: var(--text-muted);
-        margin-bottom: 1.5rem;
-        font-size: 1.05rem;
-    }
-
-    .about-features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .feature-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-        background: rgba(26, 35, 50, 0.5);
-        border-radius: 12px;
-        border: 1px solid rgba(201, 162, 39, 0.1);
-    }
-
-    .feature-icon {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(201, 162, 39, 0.15);
         border-radius: 10px;
-        font-size: 1.25rem;
-    }
-
-    .feature-item span {
+        text-decoration: none;
         font-weight: 500;
+        transition: background 0.3s;
     }
-
-    /* Values Section */
-    .values {
-        background: var(--primary);
+    
+    .social-link:hover {
+        background: #ffd700;
+        color: #000;
     }
-
-    .values-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .value-card {
-        background: var(--secondary);
-        padding: 2.5rem;
-        border-radius: 20px;
+    
+    /* Contato */
+    .contact {
+        padding: 4rem 5%;
+        background: #0f0f0f;
         text-align: center;
-        border: 1px solid rgba(201, 162, 39, 0.1);
-        transition: all 0.3s ease;
     }
-
-    .value-card:hover {
-        transform: translateY(-10px);
-        border-color: rgba(201, 162, 39, 0.3);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    }
-
-    .value-icon {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, rgba(201, 162, 39, 0.2), rgba(201, 162, 39, 0.1));
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        font-size: 2rem;
-    }
-
-    .value-card h4 {
-        font-size: 1.25rem;
+    
+    .contact-phone {
+        font-size: 1.5rem;
+        color: #25d366;
         margin-bottom: 1rem;
     }
-
-    .value-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
+    
+    /* Footer */
+    footer {
+        padding: 2rem 5%;
+        background: #0a0a0a;
+        text-align: center;
+        color: #666;
     }
-
-    /* Testimonials */
-    .testimonials {
-        background: linear-gradient(180deg, rgba(26, 35, 50, 0.5) 0%, var(--gradient-end) 100%);
+    
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+        }
     }
+</style>
 
-    .testimonials-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
+<!-- Hero -->
+<section class="hero">
+    <!-- Foto do perfil - placeholder até adicionar a foto real -->
+    <img src="https://via.placeholder.com/200x200/333/ffd700?text=Foto" alt="BorgesZR15" class="profile-img">
+    
+    <h1>Olá, eu sou <span>BorgesZR15</span></h1>
+    <p class="subtitle">Revendedor Profissional de Veículos</p>
+    <p class="tagline">Compro, vendo e troco veículos com transparência e segurança. Sua confiança é minha prioridade.</p>
+    
+    <a href="https://wa.me/5512996639104" class="cta-button">
+        <span>💬</span> Falar agora no WhatsApp
+    </a>
+</section>
 
-    .testimonial-card {
-        background: rgba(26, 35, 50, 0.5);
-        padding: 2rem;
-        border-radius: 20px;
-        border: 1px solid rgba(201, 162, 39, 0.1);
-    }
+<!-- Sobre -->
+<section class="about">
+    <h2 class="section-title">Sobre <span>Mim</span></h2>
+    <div class="about-content">
+        <p>Sou revendedor de veículos com foco em atender meus clientes com total transparência e honestidade.</p>
+        <p>Trabalho no mercado automotivo há anos, ajudando pessoas a encontrarem o veículo dos seus sonhos. Meu compromisso é com a qualidade e a segurança em cada negócio.</p>
+        <p>Entre em contato e tire todas as suas dúvidas. Estou pronto para te ajudar!</p>
+    </div>
+</section>
 
-    .testimonial-stars {
-        display: flex;
-        gap: 0.25rem;
-        margin-bottom: 1.25rem;
-    }
+<!-- Valores -->
+<section class="values">
+    <h2 class="section-title">Meus <span>Valores</span></h2>
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-icon">✅</div>
+            <h3>Transparência</h3>
+            <p>Sem enrolação. Informações claras sobre todos os veículos.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Confiança</h3>
+            <p>Compromisso com a satisfação do cliente em primeiro lugar.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">💎</div>
+            <h3>Qualidade</h3>
+            <p>Veículos revisados e com procedência comprovada.</p>
+        </div>
+    </div>
+</section>
 
-    .testimonial-stars span {
-        color: var(--accent);
-        font-size: 1.25rem;
-    }
+<!-- Depoimentos -->
+<section class="testimonials">
+    <h2 class="section-title">Depoimentos de <span>Clientes</span></h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Comprou minha moto rápido, preço justo. Pessoa muito responsável e comprometida."</p>
+            <p class="testimonial-author">- João Silva</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Vendi meu carro com segurança. O Borges foi super ético e transparente em todo o processo."</p>
+            <p class="testimonial-author">- Maria Santos</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Recomendo! Ótimo atendimento, pessoa de confiança. Vou comprar mais veículos com ele."</p>
+            <p class="testimonial-author">- Pedro Oliveira</p>
+        </div>
+    </div>
+</section>
 
-    .testimonial-text {
-        color: var(--text-muted);
-        font-style: italic;
-        margin-bottom: 1.5rem;
-        line-height: 1.7;
-    }
+<!-- Redes Sociais -->
+<section class="social">
+    <h2 class="section-title">Minhas <span>Redes Sociais</span></h2>
+    <div class="social-links">
+        <a href="https://instagram.com/borgeszr15" target="_blank" class="social-link">
+            <span>📷</span> Instagram
+        </a>
+        <a href="https://wa.me/5512996639104" target="_blank" class="social-link">
+            <span>💬</span> WhatsApp
+        </a>
+    </div>
+</section>
 
-    .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+<!-- Contato -->
+<section class="contact">
+    <h2 class="section-title">Entre em <span>Contato</span></h2>
+    <p class="contact-phone">📱 (12) 99663-9104</p>
+    <a href="https://wa.me/5512996639104" class="cta-button">
+        <span>💬</span> Chamar no WhatsApp
+    </a>
+</section>
 
-    .testimonial-avatar {
-        width: 50px;
-        height: 50px
+<!-- Footer -->
+<footer>
+    <p>© 2024 BorgesZR15 - Revenda de Veículos. Todos os direitos reservados.</p>
+                                                           </footer>
